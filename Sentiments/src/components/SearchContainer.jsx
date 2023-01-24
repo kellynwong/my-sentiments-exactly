@@ -5,6 +5,7 @@ import Results from "./Results";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import LoadSpinner from "./LoadSpinner";
+import NavBar from "./NavBar";
 
 const SearchContainer = () => {
   const [query, setQuery] = useState("");
@@ -62,11 +63,13 @@ const SearchContainer = () => {
       }}
     >
       <div>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Navigate replace to="/search" />} />
           <Route path="/results" element={<Results />} />
           <Route path="/search" element={<Search />} />
           <Route path="/search/:item" element={<Search />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </div>
       {isLoading && (
