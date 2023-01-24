@@ -4,12 +4,14 @@ import Search from "./Search";
 import Results from "./Results";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import LoadSpinner from "./LoadSpinner";
 
 const SearchContainer = () => {
   const [query, setQuery] = useState("");
   const [tweets, setTweets] = useState({});
   const [scores, setScores] = useState([0]);
   const [dropdownValue, setDropdownValue] = useState(10);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSearchInput = (query) => {
@@ -17,7 +19,7 @@ const SearchContainer = () => {
   };
 
   const onSubmitQuery = async () => {
-    console.log("Async");
+    setIsLoading(true);
     var proxy_url = "https://cors-anywhere.herokuapp.com/";
     const token =
       "AAAAAAAAAAAAAAAAAAAAAKoulQEAAAAA6LPgjrCXrkeSAdUDJSaLREDQMIE%3D4gH7oSt1X1tIzmwVfumfYeVhYd0XoJChwxl3bdePWbHVdGDDj1";
@@ -32,6 +34,7 @@ const SearchContainer = () => {
     const url = `${proxy_url}https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=${dropdownValue}`;
     const res = await fetch(url, requestOptions);
     const data = await res.json();
+    setIsLoading(false);
     setTweets(data);
     setQuery("");
     // console.log(data);
@@ -66,6 +69,11 @@ const SearchContainer = () => {
           <Route path="/search/:item" element={<Search />} />
         </Routes>
       </div>
+      {isLoading && (
+        <div className="centered">
+          <LoadSpinner />
+        </div>
+      )}
     </DataContext.Provider>
   );
 };

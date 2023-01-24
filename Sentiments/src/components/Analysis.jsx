@@ -52,7 +52,7 @@ const Analysis = (props) => {
 
   return (
     <tr>
-      <td>{props.tweet}</td>
+      <td className="tweet">{props.tweet}</td>
       <td>{sentiments.type}</td>
       <td>{score}</td>
       <td>{positiveWords}</td>
