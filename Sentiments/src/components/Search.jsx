@@ -13,7 +13,7 @@ const Search = () => {
 
   const handleClick = () => {
     data.onSubmitQuery();
-    navigate("/results");
+    // to display spinner here
   };
 
   return (

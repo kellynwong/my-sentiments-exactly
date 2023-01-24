@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import DataContext from "../context/DataContext";
 import { useNavigate } from "react-router-dom";
-import Tweet from "./Tweet";
+import Display from "./Display";
 
 const Results = () => {
   const data = useContext(DataContext);
@@ -26,15 +26,7 @@ const Results = () => {
             <th>Words with Negative Score</th>
           </tr>
           {data.tweets.data?.map((tweet, index) => {
-            return (
-              <tr>
-                <Tweet tweet={tweet.text} key={index} id={index} />
-
-                <td>Some Score</td>
-                <td>Some Positive Words</td>
-                <td>Some Negative Words</td>
-              </tr>
-            );
+            return <Display tweet={tweet.text} key={index} />;
           })}
           <tr>
             <td>Overall Score: </td>
