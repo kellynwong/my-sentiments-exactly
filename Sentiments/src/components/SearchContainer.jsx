@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 const SearchContainer = () => {
   const [query, setQuery] = useState("");
   const [tweets, setTweets] = useState({});
-  const [sentiments, setSentiments] = useState([]);
   const navigate = useNavigate();
 
   const handleSearchInput = (query) => {
@@ -49,8 +48,7 @@ const SearchContainer = () => {
         setQuery,
         tweets,
         setTweets,
-        sentiments,
-        setSentiments,
+
         handleSearchInput,
         onSubmitQuery,
         onSearchAgain,
