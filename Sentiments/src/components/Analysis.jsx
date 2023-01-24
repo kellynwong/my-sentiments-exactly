@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 
-const Display = (props) => {
+const Analysis = (props) => {
   const [sentiments, setSentiments] = useState({});
   const data = useContext(DataContext);
   let positiveWords = [];
   let negativeWords = [];
+  let score = 0;
 
   let revisedTweet = props.tweet.split(" ").join("%20");
 
@@ -25,6 +26,10 @@ const Display = (props) => {
       const analysis = await res.json();
       setSentiments(analysis);
       console.log(analysis);
+      data.setScores((prevScores) => {
+        return [...prevScores, analysis.score];
+      });
+      console.log(data.scores);
     };
     analyzeTweet();
   }, []);
@@ -33,31 +38,26 @@ const Display = (props) => {
     sentiments.score &&
     sentiments.keywords.map((pair, index) => {
       if (pair.score > 0) {
-        return positiveWords.push(`${pair.word}: ${pair.score.toFixed(2)}\n`);
+        return positiveWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
       } else {
-        return negativeWords.push(`${pair.word}: ${pair.score.toFixed(2)}\n`);
+        return negativeWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
       }
     });
 
+  if (sentiments && sentiments.score) {
+    score = sentiments.score.toFixed(2);
+    positiveWords = positiveWords.join(", ");
+    negativeWords = negativeWords.join(", ");
+  }
+
   return (
-    sentiments &&
-    sentiments.score && (
-      <tr>
-        <td>{props.tweet}</td>
-        <td>{sentiments.score.toFixed(2)}</td>
-        <td>
-          {positiveWords.map((word, index) => {
-            return word;
-          })}
-        </td>
-        <td>
-          {negativeWords.map((word, index) => {
-            return word;
-          })}
-        </td>
-      </tr>
-    )
+    <tr>
+      <td>{props.tweet}</td>
+      <td>{score}</td>
+      <td>{positiveWords}</td>
+      <td>{negativeWords}</td>
+    </tr>
   );
 };
 
-export default Display;
+export default Analysis;

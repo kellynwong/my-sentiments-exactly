@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const SearchContainer = () => {
   const [query, setQuery] = useState("");
   const [tweets, setTweets] = useState({});
+  const [scores, setScores] = useState([0]);
   const navigate = useNavigate();
 
   const handleSearchInput = (query) => {
@@ -33,7 +34,7 @@ const SearchContainer = () => {
     setTweets(data);
     setQuery("");
     console.log("Before Navigate");
-    console.log(tweets);
+    console.log(data);
     navigate("/results");
   };
 
@@ -48,7 +49,8 @@ const SearchContainer = () => {
         setQuery,
         tweets,
         setTweets,
-
+        scores,
+        setScores,
         handleSearchInput,
         onSubmitQuery,
         onSearchAgain,

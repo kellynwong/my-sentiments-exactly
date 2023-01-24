@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import DataContext from "../context/DataContext";
 import { useNavigate } from "react-router-dom";
-import Display from "./Display";
+import Analysis from "./Analysis";
+import Score from "./Score";
 
 const Results = () => {
   const data = useContext(DataContext);
@@ -20,18 +21,18 @@ const Results = () => {
       <table>
         <tbody>
           <tr>
+            <td>Overall Score: </td>
+            <Score />
+          </tr>
+          <tr>
             <th>Tweet</th>
             <th>Score</th>
             <th>Words with Positive Score</th>
             <th>Words with Negative Score</th>
           </tr>
           {data.tweets.data?.map((tweet, index) => {
-            return <Display tweet={tweet.text} key={index} />;
+            return <Analysis tweet={tweet.text} key={index} />;
           })}
-          <tr>
-            <td>Overall Score: </td>
-            <td>Some Score</td>
-          </tr>
         </tbody>
       </table>
     </div>

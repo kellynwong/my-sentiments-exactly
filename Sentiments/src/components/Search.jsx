@@ -21,9 +21,7 @@ const Search = () => {
       <input
         type="text"
         onChange={handleChange}
-        placeholder={
-          params.item ? params.item : "Enter search word e.g. Ethereum"
-        }
+        placeholder={params.item ? params.item : "Enter search word"}
       />
 
       <button type="submit" value="Search" onClick={handleClick}>
