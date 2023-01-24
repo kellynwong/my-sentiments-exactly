@@ -7,7 +7,6 @@ const Analysis = (props) => {
   let positiveWords = [];
   let negativeWords = [];
   let score = 0;
-  let sentiment = "";
 
   let revisedTweet = props.tweet.split(" ").join("%20");
 
@@ -26,11 +25,11 @@ const Analysis = (props) => {
       const res = await fetch(url, requestOptions);
       const analysis = await res.json();
       setSentiments(analysis);
-      console.log(analysis);
+      // console.log(analysis);
       data.setScores((prevScores) => {
         return [...prevScores, analysis.score];
       });
-      console.log(data.scores);
+      // console.log(data.scores);
     };
     analyzeTweet();
   }, []);

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
+import Bottom from "./Bottom";
 
 const Search = () => {
   const data = useContext(DataContext);
@@ -13,7 +14,7 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     data.setDropdownValue(e.target.value);
-    console.log(data.dropdownValue);
+    // console.log(data.dropdownValue);
   };
 
   const handleClick = () => {
@@ -45,6 +46,7 @@ const Search = () => {
           Submit
         </button>
       </div>
+      <Bottom />
     </div>
   );
 };

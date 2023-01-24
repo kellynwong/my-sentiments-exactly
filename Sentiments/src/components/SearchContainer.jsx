@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DataContext from "../context/DataContext";
 import Search from "./Search";
 import Results from "./Results";

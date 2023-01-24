@@ -1,10 +1,12 @@
 import React from "react";
-import Home from "./components/Home";
+import SearchContainer from "./components/SearchContainer";
 
 function App() {
   return (
     <div>
-      <Home />
+      <img className="logo" src="src/components/images/logo.gif" />
+      <h1>My Centiments Exactly</h1>
+      <SearchContainer />
     </div>
   );
 }
