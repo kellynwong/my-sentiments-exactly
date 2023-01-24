@@ -18,6 +18,17 @@ body {
   float: left;
 }
 
+.searchWord,
+.select {
+  margin: 20px;
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   font-size: 50px;
   font-family: "Cute Font", cursive;

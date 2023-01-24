@@ -26,6 +26,7 @@ const Results = () => {
           </tr>
           <tr>
             <th>Tweet</th>
+            <th>Sentiment</th>
             <th>Score</th>
             <th>Words with Positive Score</th>
             <th>Words with Negative Score</th>

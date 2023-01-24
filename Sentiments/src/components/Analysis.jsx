@@ -7,6 +7,7 @@ const Analysis = (props) => {
   let positiveWords = [];
   let negativeWords = [];
   let score = 0;
+  let sentiment = "";
 
   let revisedTweet = props.tweet.split(" ").join("%20");
 
@@ -53,6 +54,7 @@ const Analysis = (props) => {
   return (
     <tr>
       <td>{props.tweet}</td>
+      <td>{sentiments.type}</td>
       <td>{score}</td>
       <td>{positiveWords}</td>
       <td>{negativeWords}</td>

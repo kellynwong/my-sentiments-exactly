@@ -9,6 +9,7 @@ const SearchContainer = () => {
   const [query, setQuery] = useState("");
   const [tweets, setTweets] = useState({});
   const [scores, setScores] = useState([0]);
+  const [dropdownValue, setDropdownValue] = useState(10);
   const navigate = useNavigate();
 
   const handleSearchInput = (query) => {
@@ -28,7 +29,7 @@ const SearchContainer = () => {
       },
     };
     //console.log(requestOptions);
-    const url = `${proxy_url}https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=10`;
+    const url = `${proxy_url}https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=${dropdownValue}`;
     const res = await fetch(url, requestOptions);
     const data = await res.json();
     setTweets(data);
@@ -51,6 +52,8 @@ const SearchContainer = () => {
         setTweets,
         scores,
         setScores,
+        dropdownValue,
+        setDropdownValue,
         handleSearchInput,
         onSubmitQuery,
         onSearchAgain,
