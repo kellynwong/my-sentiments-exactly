@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
-import Bottom from "./Bottom";
+// import Bottom from "./Bottom";
 
 const Search = () => {
   const data = useContext(DataContext);
@@ -46,7 +46,7 @@ const Search = () => {
           Submit
         </button>
       </div>
-      <Bottom />
+      {/* <Bottom /> */}
     </div>
   );
 };

@@ -34,8 +34,7 @@ const SearchContainer = () => {
     const data = await res.json();
     setTweets(data);
     setQuery("");
-    console.log("Before Navigate");
-    console.log(data);
+    // console.log(data);
     navigate("/results");
   };
 

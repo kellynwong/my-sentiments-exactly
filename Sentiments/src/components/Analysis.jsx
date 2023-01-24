@@ -36,7 +36,7 @@ const Analysis = (props) => {
 
   sentiments &&
     sentiments.score &&
-    sentiments.keywords.map((pair, index) => {
+    sentiments.keywords.map((pair) => {
       if (pair.score > 0) {
         return positiveWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
       } else {
