@@ -18,18 +18,17 @@ const Results = () => {
       {/* <button type="submit" onClick={handleClick}>
         Back to Search
       </button> */}
+
+      <Score />
+
       <table>
         <tbody>
           <tr>
-            <td>Overall Score: </td>
-            <Score />
-          </tr>
-          <tr>
-            <th>Tweet</th>
+            <th className="thStart">Tweet</th>
+            <th>Positive</th>
+            <th>Negative</th>
             <th>Sentiment</th>
-            <th>Score</th>
-            <th>Words with Positive Score</th>
-            <th>Words with Negative Score</th>
+            <th className="thEnd">Score</th>
           </tr>
           {data.tweets.data?.map((tweet, index) => {
             return <Analysis tweet={tweet.text} key={index} />;

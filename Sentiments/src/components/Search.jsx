@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
-// import Bottom from "./Bottom";
 
 const Search = () => {
   const data = useContext(DataContext);
@@ -19,7 +18,6 @@ const Search = () => {
 
   const handleClick = () => {
     data.onSubmitQuery();
-    // to display spinner here
   };
 
   return (
@@ -29,6 +27,7 @@ const Search = () => {
           type="text"
           onChange={handleChange}
           placeholder={params.item ? params.item : "Enter search word"}
+          value={data.query}
         />
       </div>
 
@@ -46,7 +45,6 @@ const Search = () => {
           Submit
         </button>
       </div>
-      {/* <Bottom /> */}
     </div>
   );
 };

@@ -1,21 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@200&display=swap");
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: whitesmoke;
+  background-color: white;
   font-family: "Roboto Condensed", sans-serif;
-  color: rgb(120, 156, 255);
+  color: rgb(75, 80, 101);
   margin: 30px;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   float: left;
+  margin-right: 10px;
+  margin-left: 33px;
+  margin-top: -10px;
 }
 
 .searchWord,
@@ -24,30 +27,99 @@ body {
   text-align: center;
 }
 
+.searchWord > input,
+.select > select {
+  height: 2.5rem;
+  border: 0.5px solid rgba(75, 80, 101, 0.5);
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  color: rgb(75, 80, 101);
+}
+
+::placeholder {
+  color: rgb(75, 80, 101);
+}
+
+.button > button {
+  height: 2.5rem;
+  border: 0.5px solid rgba(75, 80, 101, 0.5);
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  color: rgb(75, 80, 101);
+}
+
 .button {
   display: flex;
   justify-content: center;
 }
 
 h1 {
-  font-size: 50px;
-  font-family: "Cute Font", cursive;
-  color: rgb(70, 94, 221);
+  font-size: 40px;
+  font-family: "Sofia Sans Semi Condensed", sans-serif;
+  color: rgb(75, 80, 101);
 }
 
+h2,
+h3 {
+  margin: 20px;
+  text-align: center;
+}
 table {
+  height: 2.5rem;
   width: 80%;
-  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
 }
 
 th {
-  background-color: rgb(193, 228, 248);
-  color: white;
+  background-color: rgba(124, 129, 152, 0.5);
+}
+
+.thStart {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 10px;
+}
+
+.thEnd {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 th,
 td {
   text-align: left;
   padding: 8px;
+}
+
+td {
   border-bottom: 1px solid #ddd;
+}
+
+/* .outer {
+  background-color: rgb(124, 129, 152, 0.2);
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.progressBar {
+  background-color: rgba(124, 129, 152, 1);
+  margin-left: auto;
+  margin-right: auto;
+  height: 20px;
+  width: 100px;
+} */
+
+.searchTerm {
+  border-bottom: 3px solid rgba(75, 80, 101, 0.5);
 }

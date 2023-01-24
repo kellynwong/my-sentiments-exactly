@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "../context/DataContext";
 
 const History = () => {
-  return <div>"Hi"</div>;
+  const data = useContext(DataContext);
+
+  return <h1>Placeholder</h1>;
 };
 
 export default History;

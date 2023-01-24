@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DataContext from "../context/DataContext";
 import Search from "./Search";
 import Results from "./Results";
+import History from "./History";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import LoadSpinner from "./LoadSpinner";
@@ -13,6 +14,7 @@ const SearchContainer = () => {
   const [scores, setScores] = useState([0]);
   const [dropdownValue, setDropdownValue] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const handleSearchInput = (query) => {
@@ -37,7 +39,7 @@ const SearchContainer = () => {
     const data = await res.json();
     setIsLoading(false);
     setTweets(data);
-    setQuery("");
+    // setQuery("");
     // console.log(data);
     navigate("/results");
   };

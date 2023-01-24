@@ -4,7 +4,7 @@ import SearchContainer from "./components/SearchContainer";
 function App() {
   return (
     <div>
-      <img className="logo" src="src/components/images/logo.gif" />
+      <img className="logo" src="src/components/images/logo.png" />
       <h1>My Centiments Exactly</h1>
       <SearchContainer />
     </div>

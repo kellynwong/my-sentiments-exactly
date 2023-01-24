@@ -10,11 +10,12 @@
   width: 32px;
   height: 32px;
   left: 50%;
-  margin-left: -15px;
+  margin-left: -12px;
   margin-top: 50px;
   border-radius: 50%;
-  border: 6px solid rgb(70, 94, 221);
-  border-color: rgb(70, 94, 221) transparent rgb(70, 94, 221) transparent;
+  border: 6px solid rgb(75, 80, 101);
+  border-color: rgba(75, 80, 101, 0.5) transparent rgba(75, 80, 101, 0.5)
+    transparent;
   animation: spinner 1.2s linear infinite;
 }
 
