@@ -38,14 +38,14 @@ const Analysis = (props) => {
     sentiments.score &&
     sentiments.keywords.map((pair) => {
       if (pair.score > 0) {
-        return positiveWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
+        return positiveWords.push(`${pair.word}: ${pair.score.toFixed(3)}`);
       } else {
-        return negativeWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
+        return negativeWords.push(`${pair.word}: ${pair.score.toFixed(3)}`);
       }
     });
 
   if (sentiments && sentiments.score) {
-    score = sentiments.score.toFixed(2);
+    score = sentiments.score.toFixed(3);
     positiveWords = positiveWords.join(", ");
     negativeWords = negativeWords.join(", ");
   }

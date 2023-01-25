@@ -14,17 +14,14 @@ const SearchContainer = () => {
   const [scores, setScores] = useState([0]);
   const [dropdownValue, setDropdownValue] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
-
   const [history, setHistory] = useState([
     // {
     //   timestamp: "",
     //   searchTerm: "",
-    //   overallScore: 0,
+    //   score: 0,
     // },
   ]);
-
   const navigate = useNavigate();
-
   const handleSearchInput = (query) => {
     setQuery(query);
   };
@@ -64,9 +61,8 @@ const SearchContainer = () => {
       searchTerm: query,
     });
     setHistory(history);
-    console.log(history);
+    // console.log(history);
     localStorage.setItem("history", JSON.stringify(history));
-
     navigate("/results");
   };
 

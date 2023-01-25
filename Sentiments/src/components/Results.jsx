@@ -8,19 +8,13 @@ const Results = () => {
   const data = useContext(DataContext);
   const navigate = useNavigate();
 
-  // const handleClick = () => {
-  //   data.onSearchAgain();
-  //   navigate("/search");
-  // };
+  const something = (something) => {
+    console.log(something);
+  };
 
   return (
     <div>
-      {/* <button type="submit" onClick={handleClick}>
-        Back to Search
-      </button> */}
-
-      <Score />
-
+      <Score something={something} />
       <table>
         <tbody>
           <tr>
