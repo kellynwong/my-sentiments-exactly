@@ -15,11 +15,28 @@ const SearchContainer = () => {
   const [dropdownValue, setDropdownValue] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [history, setHistory] = useState([
+    // {
+    //   timestamp: "",
+    //   searchTerm: "",
+    //   overallScore: 0,
+    // },
+  ]);
+
   const navigate = useNavigate();
 
   const handleSearchInput = (query) => {
     setQuery(query);
   };
+
+  useEffect(() => {
+    const oldHistory = localStorage.getItem("history");
+    if (oldHistory !== null) {
+      const parsedOldHistory = JSON.parse(oldHistory);
+      // when I reload, useState for history is empty array [], that's why I need to re setHistory with the old history here
+      setHistory(parsedOldHistory);
+    }
+  }, []);
 
   const onSubmitQuery = async () => {
     setIsLoading(true);
@@ -41,6 +58,16 @@ const SearchContainer = () => {
     setTweets(data);
     // setQuery("");
     // console.log(data);
+
+    const newDate = new Date().toISOString().split("T")[0];
+    history.push({
+      timestamp: newDate,
+      searchTerm: query,
+    });
+    setHistory(history);
+    console.log(history);
+    localStorage.setItem("history", JSON.stringify(history));
+
     navigate("/results");
   };
 
@@ -58,6 +85,8 @@ const SearchContainer = () => {
         scores,
         setScores,
         dropdownValue,
+        history,
+        setHistory,
         setDropdownValue,
         handleSearchInput,
         onSubmitQuery,

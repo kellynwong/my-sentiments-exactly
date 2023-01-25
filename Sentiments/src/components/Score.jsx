@@ -13,6 +13,14 @@ const Score = () => {
 
   averageScore = sum / length;
 
+  // // modify my history, similar to history.push
+  // data.history[data.history.length - 1].score = averageScore;
+
+  // data.setHistory(data.history);
+
+  // // do this again because I want to store this new info
+  // localStorage.setItem("history", JSON.stringify(data.history));
+
   return (
     <div>
       <h2>Overall Score: {averageScore.toFixed(2)}</h2>
