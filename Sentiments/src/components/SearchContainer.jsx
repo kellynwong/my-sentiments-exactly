@@ -45,7 +45,6 @@ const SearchContainer = () => {
       "AAAAAAAAAAAAAAAAAAAAAKoulQEAAAAA6LPgjrCXrkeSAdUDJSaLREDQMIE%3D4gH7oSt1X1tIzmwVfumfYeVhYd0XoJChwxl3bdePWbHVdGDDj1";
     const requestOptions = {
       method: "GET",
-
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -59,7 +58,7 @@ const SearchContainer = () => {
     // setQuery("");
     // console.log(data);
 
-    const newDate = new Date().toISOString().split("T")[0];
+    const newDate = new Date().toLocaleString();
     history.push({
       timestamp: newDate,
       searchTerm: query,

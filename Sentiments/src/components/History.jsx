@@ -6,22 +6,24 @@ const History = () => {
 
   let history = data.history.map((item, index) => {
     return (
-      <table key={index}>
-        <tbody>
-          <tr>
-            <th className="thStart">Timestamp</th>
-            <th className="thEnd">Search Term</th>
-          </tr>
-          <tr>
-            <td>{item.timestamp}</td>
-            <td>{item.searchTerm}</td>
-          </tr>
-        </tbody>
-      </table>
+      <tr key={index}>
+        <td>{item.timestamp}</td>
+        <td>{item.searchTerm}</td>
+      </tr>
     );
   });
 
-  return <div>{history}</div>;
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <th className="thStart">Timestamp</th>
+          <th className="thEnd">Search Term</th>
+        </tr>
+        {history}
+      </tbody>
+    </table>
+  );
 };
 
 export default History;

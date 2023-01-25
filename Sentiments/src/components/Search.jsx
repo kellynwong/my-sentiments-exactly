@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
 
@@ -6,6 +6,7 @@ const Search = () => {
   const data = useContext(DataContext);
   const navigate = useNavigate();
   const params = useParams();
+  const [isNotValid, setIsNotValid] = useState(false);
 
   const handleChange = (e) => {
     data.handleSearchInput(e.target.value);
@@ -17,7 +18,11 @@ const Search = () => {
   };
 
   const handleClick = () => {
-    data.onSubmitQuery();
+    if (data.query !== "") {
+      data.onSubmitQuery();
+    } else {
+      setIsNotValid(true);
+    }
   };
 
   return (
@@ -45,6 +50,9 @@ const Search = () => {
           Submit
         </button>
       </div>
+      <h2 style={{ color: `rgba(101, 96, 75, 0.5)` }}>
+        {isNotValid && "Please enter a search word!"}
+      </h2>
     </div>
   );
 };
