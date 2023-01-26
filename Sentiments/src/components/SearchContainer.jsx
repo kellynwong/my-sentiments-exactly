@@ -93,7 +93,10 @@ const SearchContainer = () => {
         <Routes>
           <Route path="/" element={<Navigate replace to="/search" />} />
           <Route path="/results" element={<Results />} />
-          <Route path="/search" element={<Search />} />
+          <Route
+            path="/search"
+            element={<Search handleSearchInput={handleSearchInput} />}
+          />
           <Route path="/search/:item" element={<Search />} />
           <Route path="/history" element={<History />} />
         </Routes>

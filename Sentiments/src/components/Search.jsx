@@ -2,14 +2,14 @@ import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
 
-const Search = () => {
+const Search = (props) => {
   const data = useContext(DataContext);
 
   const params = useParams();
   const [isNotValid, setIsNotValid] = useState(false);
 
   const handleChange = (e) => {
-    data.handleSearchInput(e.target.value);
+    props.handleSearchInput(e.target.value);
   };
 
   const handleSubmit = (e) => {
