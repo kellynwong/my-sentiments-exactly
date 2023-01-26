@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
+import MiniMeter from "./MiniMeter";
 
 const Analysis = (props) => {
   const [sentiments, setSentiments] = useState({});
@@ -38,23 +39,26 @@ const Analysis = (props) => {
     sentiments.score &&
     sentiments.keywords.map((pair) => {
       if (pair.score > 0) {
-        return positiveWords.push(`${pair.word}: ${pair.score.toFixed(3)}`);
+        return positiveWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
       } else {
-        return negativeWords.push(`${pair.word}: ${pair.score.toFixed(3)}`);
+        return negativeWords.push(`${pair.word}: ${pair.score.toFixed(2)}`);
       }
     });
 
   if (sentiments && sentiments.score) {
-    score = sentiments.score.toFixed(3);
+    score = sentiments.score.toFixed(2);
     positiveWords = positiveWords.join(", ");
     negativeWords = negativeWords.join(", ");
   }
 
   return (
     <tr>
-      <td className="tweet">{props.tweet}</td>
+      <td>{props.tweet}</td>
       <td>{positiveWords}</td>
       <td>{negativeWords}</td>
+      <td>
+        <MiniMeter score={sentiments.score} sentiment={sentiments.type} />
+      </td>
       <td>{sentiments.type}</td>
       <td>{score}</td>
     </tr>

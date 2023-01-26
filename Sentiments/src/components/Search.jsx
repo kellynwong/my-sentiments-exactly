@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
+import Tweet from "./Tweet";
 
 const Search = () => {
   const data = useContext(DataContext);
@@ -53,6 +54,13 @@ const Search = () => {
       <h2 style={{ color: `rgba(101, 96, 75, 0.5)` }}>
         {isNotValid && "Please enter a search word!"}
       </h2>
+
+      <div className="row">
+        <Tweet />
+        <Tweet />
+        <Tweet />
+        <Tweet />
+      </div>
     </div>
   );
 };

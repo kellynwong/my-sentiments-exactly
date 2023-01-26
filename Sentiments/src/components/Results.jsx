@@ -8,21 +8,26 @@ const Results = () => {
   const data = useContext(DataContext);
   const navigate = useNavigate();
 
-  const something = (something) => {
-    console.log(something);
-  };
+  // const something = (something) => {
+  //   console.log(something);
+  // };
 
   return (
     <div>
-      <Score something={something} />
+      <Score />
       <table>
         <tbody>
           <tr>
-            <th className="thStart">Tweet</th>
-            <th>Positive</th>
-            <th>Negative</th>
-            <th>Sentiment</th>
-            <th className="thEnd">Score</th>
+            <th width="330px" className="thStart">
+              Tweet
+            </th>
+            <th width="220px">Words Evaluated as Positive</th>
+            <th width="220px">Words Evaluated as Negative</th>
+            <th width="70px">Meter</th>
+            <th width="100px">Sentiment</th>
+            <th width="100px" className="thEnd">
+              Score
+            </th>
           </tr>
           {data.tweets.data?.map((tweet, index) => {
             return <Analysis tweet={tweet.text} key={index} />;

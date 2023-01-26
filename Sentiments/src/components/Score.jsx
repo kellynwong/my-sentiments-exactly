@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import DataContext from "../context/DataContext";
+import Meter from "./Meter";
 
 const Score = () => {
   const data = useContext(DataContext);
@@ -22,20 +23,24 @@ const Score = () => {
   //   props.something(averageScore);
   // }, []);
 
-  const someFunction = () => {
+  const storeScoreInLocalStorage = () => {
     data.history[data.history.length - 1].score = averageScore;
     data.setHistory(data.history);
     localStorage.setItem("history", JSON.stringify(data.history));
   };
 
-  setInterval(someFunction, 5000);
+  setInterval(storeScoreInLocalStorage, 5000);
 
   return (
     <div>
-      <h2>Overall Score: {averageScore.toFixed(3)}</h2>
-      <h3>
+      <h2>
         Search Term: <span className="searchTerm">{data.query}</span>
-      </h3>
+      </h2>
+      <h3>Overall Score: {averageScore.toFixed(2)}</h3>
+
+      <div>
+        <Meter score={averageScore} />
+      </div>
       {/* <div className="outer">
         <div className="progressBar"></div>
       </div> */}

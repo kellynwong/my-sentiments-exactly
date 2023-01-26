@@ -72,6 +72,10 @@ h3 {
   margin: 20px;
   text-align: center;
 }
+
+h3 {
+  margin-bottom: 30px;
+}
 table {
   height: 2.5rem;
   width: 80%;
@@ -83,6 +87,8 @@ table {
 
 th {
   background-color: rgba(124, 129, 152, 0.5);
+  padding: 8px;
+  text-align: left;
 }
 
 .thStart {
@@ -96,30 +102,86 @@ th {
   border-bottom-right-radius: 10px;
 }
 
-th,
 td {
   text-align: left;
   padding: 8px;
-}
-
-td {
   border-bottom: 1px solid #ddd;
 }
 
-/* .outer {
-  background-color: rgb(124, 129, 152, 0.2);
-  width: 30%;
+.searchTerm {
+  border-bottom: 3px solid rgba(75, 80, 101, 0.5);
+}
+
+.row {
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
-.progressBar {
-  background-color: rgba(124, 129, 152, 1);
+.tweet {
+  background-color: rgb(247, 247, 247);
+  border: 0.5px solid rgb(234, 236, 238);
+  border-radius: 5px;
+}
+
+/* ========================== BIG METER ========================== */
+meter {
+  width: 15%;
+  height: 45px;
   margin-left: auto;
   margin-right: auto;
-  height: 20px;
-  width: 100px;
-} */
+  text-align: center;
+  display: block;
+  position: relative;
+}
 
-.searchTerm {
-  border-bottom: 3px solid rgba(75, 80, 101, 0.5);
+.redMeter::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #efefef 65%, #d10000 100%);
+}
+
+.greenMeter::-webkit-meter-optimum-value {
+  background-image: linear-gradient(90deg, #efefef 65%, #76b947 100%);
+}
+
+meter::before {
+  content: "-1 Negative (Red)";
+  top: -30%;
+  left: -20%;
+  position: absolute;
+  font-size: 10px;
+}
+
+meter::after {
+  content: "1 Positive (Green)";
+  top: -30%;
+  right: -20%;
+  position: absolute;
+  font-size: 10px;
+}
+
+/* ========================== MINI METER ========================== */
+#miniMeter {
+  width: 90%;
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+  position: relative;
+  margin-top: 3px;
+}
+
+#miniMeter::before {
+  content: "-1";
+  top: -25%;
+  left: -5%;
+  position: absolute;
+  font-size: 8px;
+}
+
+#miniMeter::after {
+  content: "1";
+  top: -25%;
+  right: 5%;
+  position: absolute;
+  font-size: 8px;
 }
