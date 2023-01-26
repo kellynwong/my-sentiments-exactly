@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DataContext from "../context/DataContext";
+import Tweet from "./Tweet";
 
 const Search = () => {
   const data = useContext(DataContext);
+  const navigate = useNavigate();
   const params = useParams();
   const [isNotValid, setIsNotValid] = useState(false);
 
@@ -13,6 +15,7 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     data.setDropdownValue(e.target.value);
+    // console.log(data.dropdownValue);
   };
 
   const handleClick = () => {
@@ -51,6 +54,13 @@ const Search = () => {
       <h2 style={{ color: `rgba(101, 96, 75, 0.5)` }}>
         {isNotValid && "Please enter a search word!"}
       </h2>
+
+      <div className="row">
+        <Tweet />
+        <Tweet />
+        <Tweet />
+        <Tweet />
+      </div>
     </div>
   );
 };

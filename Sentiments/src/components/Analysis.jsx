@@ -8,6 +8,7 @@ const Analysis = (props) => {
   let positiveWords = [];
   let negativeWords = [];
   let score = 0;
+
   let revisedTweet = props.tweet.split(" ").join("%20");
 
   useEffect(() => {

@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
 import DataContext from "../context/DataContext";
+import { useNavigate } from "react-router-dom";
 import Analysis from "./Analysis";
 import Score from "./Score";
 
 const Results = () => {
   const data = useContext(DataContext);
+  const navigate = useNavigate();
+
+  // const something = (something) => {
+  //   console.log(something);
+  // };
 
   return (
     <div>

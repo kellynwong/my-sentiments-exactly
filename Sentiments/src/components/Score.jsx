@@ -10,6 +10,19 @@ const Score = () => {
   let length = data.scores.length;
   let averageScore = sum / length;
 
+  // // modify my history, similar to history.push
+  // data.history[data.history.length - 1].score = averageScore;
+
+  // data.setHistory(data.history);
+
+  // // do this again because I want to store this new info
+  // localStorage.setItem("history", JSON.stringify(data.history));
+
+  // Use this below to see that averageScore keeps changing as rows are being populated:
+  // useEffect(() => {
+  //   props.something(averageScore);
+  // }, []);
+
   const storeScoreInLocalStorage = () => {
     data.history[data.history.length - 1].score = averageScore;
     data.setHistory(data.history);
@@ -28,6 +41,9 @@ const Score = () => {
       <div>
         <Meter score={averageScore} />
       </div>
+      {/* <div className="outer">
+        <div className="progressBar"></div>
+      </div> */}
     </div>
   );
 };

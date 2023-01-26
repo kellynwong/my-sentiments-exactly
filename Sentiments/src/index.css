@@ -135,11 +135,11 @@ meter {
 }
 
 .redMeter::-webkit-meter-optimum-value {
-  background-image: linear-gradient(90deg, #efefef 75%, #d10000 100%);
+  background-image: linear-gradient(90deg, #efefef 65%, #d10000 100%);
 }
 
 .greenMeter::-webkit-meter-optimum-value {
-  background-image: linear-gradient(90deg, #efefef 75%, #76b947 100%);
+  background-image: linear-gradient(90deg, #efefef 65%, #76b947 100%);
 }
 
 meter::before {
