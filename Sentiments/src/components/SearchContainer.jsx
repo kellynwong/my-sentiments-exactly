@@ -10,10 +10,9 @@ import NavBar from "./NavBar";
 
 const SearchContainer = () => {
   const [query, setQuery] = useState("");
+  const [dropdownValue, setDropdownValue] = useState(10);
   const [tweets, setTweets] = useState({});
   const [scores, setScores] = useState([0]);
-  const [dropdownValue, setDropdownValue] = useState(10);
-  const [isLoading, setIsLoading] = useState(false);
   const [history, setHistory] = useState([
     // {
     //   timestamp: "",
@@ -21,6 +20,7 @@ const SearchContainer = () => {
     //   score: 0,
     // },
   ]);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const handleSearchInput = (query) => {
     setQuery(query);
@@ -52,7 +52,7 @@ const SearchContainer = () => {
     const data = await res.json();
     setIsLoading(false);
     setTweets(data);
-    // setQuery("");
+
     // console.log(data);
 
     const newDate = new Date().toLocaleString();
@@ -75,14 +75,14 @@ const SearchContainer = () => {
       value={{
         query,
         setQuery,
+        dropdownValue,
+        setDropdownValue,
         tweets,
         setTweets,
         scores,
         setScores,
-        dropdownValue,
         history,
         setHistory,
-        setDropdownValue,
         handleSearchInput,
         onSubmitQuery,
         onSearchAgain,
