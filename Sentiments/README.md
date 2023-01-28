@@ -2,9 +2,9 @@
 
 My Sentiments Exactly allows one to check the latest sentiments on Twitter based on a search term entered by the user. User can select to search latest 10, 15, 20 or 25 tweets.
 
-![Search](images/Search.png)
-![Results](images/Results.png)
-![History](images/History.png)
+![Search](src/components/images/Search.png)
+![Results](src/components/images/Results.png)
+![History](src/components/images/History.png)
 
 To start the app, please visit https://cors-anywhere.herokuapp.com/corsdemo and click for "Request temporary access to the demo server".
 
@@ -24,13 +24,13 @@ To start the app, please visit https://cors-anywhere.herokuapp.com/corsdemo and 
 
 ## Wireframe
 
-![Wireframe - Search](images/"Wireframe - Search.png")
-![Wireframe - Results](images/"Wireframe - Results.png")
-![Wireframe - History](images/"Wireframe - History.png")
+![Wireframe - Search](src/components/images/"Wireframe - Search.png")
+![Wireframe - Results](src/components/images/"Wireframe - Results.png")
+![Wireframe - History](src/components/images/"Wireframe - History.png")
 
 ## Hierarchy
 
-![Hierarchy](images/Hierarchy.png")
+![Hierarchy](src/components/images/Hierarchy.png")
 
 ## User Stories
 
@@ -69,6 +69,6 @@ Users should be able to:
 
 ## Acknowledgements
 
-1. Twitter API [link] (https://developer.twitter.com/en/docs/twitter-api)
-2. Twinword API [link] (https://www.twinword.com/api/sentiment-analysis.php)
-3. Credits to this discussion which guided on how to use a CORS proxy to avoid the "No Access-Control-Allow-Origin-Header" problems [link] (https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141#43881141)
+1. Twitter API - https://developer.twitter.com/en/docs/twitter-api
+2. Twinword API - https://www.twinword.com/api/sentiment-analysis.php
+3. Credits to this discussion which guided on how to use a CORS proxy to avoid the "No Access-Control-Allow-Origin-Header" problems - https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141#43881141
