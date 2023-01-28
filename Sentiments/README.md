@@ -24,13 +24,13 @@ To start the app, please visit https://cors-anywhere.herokuapp.com/corsdemo and 
 
 ## Wireframe
 
-![Wireframe - Search](src/components/images/"Wireframe - Search.png")
-![Wireframe - Results](src/components/images/"Wireframe - Results.png")
-![Wireframe - History](src/components/images/"Wireframe - History.png")
+![Wireframe - Search]("src/components/images/Wireframe - Search.png")
+![Wireframe - Results]("src/components/images/Wireframe - Results.png")
+![Wireframe - History]("src/components/images/Wireframe - History.png")
 
 ## Hierarchy
 
-![Hierarchy](src/components/images/Hierarchy.png")
+![Hierarchy]("src/components/images/Hierarchy.png")
 
 ## User Stories
 
