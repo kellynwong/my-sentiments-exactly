@@ -2,9 +2,9 @@
 
 My Sentiments Exactly allows one to check the latest sentiments on Twitter based on a search term entered by the user. User can select to search latest 10, 15, 20 or 25 tweets.
 
-![Search](src/components/images/ActualSearch.png)
-![Results](src/components/images/ActualResults.png)
-![History](src/components/images/ActualHistory.png)
+![Search](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/AppSearch.png)
+![Results](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/AppResults.png)
+![History](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/AppHistory.png)
 
 To start the app, please visit https://cors-anywhere.herokuapp.com/corsdemo and click for "Request temporary access to the demo server".
 
@@ -26,13 +26,13 @@ To start the app, please visit https://cors-anywhere.herokuapp.com/corsdemo and 
 
 ## Hierarchy
 
-![Hierarchy](src/components/images/Hierarchy.png)
+![Hierarchy](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/Hierarchy.png)
 
 ## Wireframe
 
-![Wireframe - Search](src/components/images/WireframeSearch.png)
-![Wireframe - Results](src/components/images/WireframeResults.png)
-![Wireframe - History](src/components/images/WireframeHistory.png)
+![Wireframe - Search](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/WireframeSearch.png)
+![Wireframe - Results](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/WireframeResults.png)
+![Wireframe - History](https://github.com/kellynwong/mysentimentsexactly/blob/main/Sentiments/src/components/images/WireframeHistory.png)
 
 ## User Stories
 
