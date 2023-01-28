@@ -30,7 +30,7 @@ const Search = (props) => {
         <input
           type="text"
           onChange={handleChange}
-          placeholder={params.item ? params.item : "Enter search word"}
+          placeholder={params.item ? params.item : "Enter search term"}
           value={data.query}
         />
       </div>
@@ -50,7 +50,7 @@ const Search = (props) => {
         </button>
       </div>
       <h2 style={{ color: `rgba(101, 96, 75, 0.5)` }}>
-        {isNotValid && "Please enter a search word!"}
+        {isNotValid && "Please enter a search term!"}
       </h2>
     </div>
   );

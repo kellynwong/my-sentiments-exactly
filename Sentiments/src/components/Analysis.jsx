@@ -46,7 +46,7 @@ const Analysis = (props) => {
     });
 
   if (sentiments && sentiments.score) {
-    score = sentiments.score.toFixed(2);
+    score = sentiments.score.toFixed(3);
     positiveWords = positiveWords.join(", ");
     negativeWords = negativeWords.join(", ");
   }

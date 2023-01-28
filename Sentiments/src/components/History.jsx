@@ -9,7 +9,7 @@ const History = () => {
       <tr key={index}>
         <td>{item.timestamp}</td>
         <td>{item.searchTerm}</td>
-        <td>{item.score.toFixed(2)}</td>
+        <td>{item.score}</td>
       </tr>
     );
   });
